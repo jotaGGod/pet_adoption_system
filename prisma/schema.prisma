@@ -12,18 +12,8 @@ model Animals {
   name         String    @db.VarChar(100)
   description  String?   @db.Text
   image_url    String?   @db.VarChar(255)
-  category     Category
+  category     String    @db.VarChar(90)
   birth        DateTime?
   age          Int?
-  is_available Status
-}
-
-enum Status {
-  available
-  adopted
-}
-
-enum Category {
-  dog
-  cat
+  is_available Boolean   @default(true)
 }
