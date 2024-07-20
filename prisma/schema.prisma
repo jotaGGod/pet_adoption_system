@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Animals {
+  id           String    @id @default(uuid())
+  name         String    @db.VarChar(100)
+  description  String?   @db.Text
+  image_url    String?   @db.VarChar(255)
+  category     Category
+  birth        DateTime?
+  age          Int?
+  is_available Status
+}
+
+enum Status {
+  available
+  adopted
+}
+
+enum Category {
+  dog
+  cat
+}
