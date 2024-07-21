@@ -13,7 +13,7 @@ export async function executeAnimalsSeed() {
         category: "dog",
         birth: new Date('2018-05-15T00:00:00Z'),
         age: 6,
-        is_available: "available"
+        is_available: true
       },
       {
         id: "550e8400-e29b-41d4-a716-446655440001",
@@ -23,7 +23,7 @@ export async function executeAnimalsSeed() {
         category: "cat",
         birth: new Date('2015-08-20T00:00:00Z'),
         age: 9,
-        is_available: "adopted"
+        is_available: false
       },
       {
         id: "550e8400-e29b-41d4-a716-446655440002",
@@ -33,7 +33,7 @@ export async function executeAnimalsSeed() {
         category: "cat",
         birth: new Date('2019-11-25T00:00:00Z'),
         age: 4,
-        is_available: "adopted"
+        is_available: false
       },
       {
         id: "550e8400-e29b-41d4-a716-446655440003",
@@ -43,7 +43,7 @@ export async function executeAnimalsSeed() {
         category: "cat",
         birth: new Date('2016-02-10T00:00:00Z'),
         age: 8,
-        is_available: "available"
+        is_available: true
       },
       {
         id: "550e8400-e29b-41d4-a716-446655440004",
@@ -53,7 +53,7 @@ export async function executeAnimalsSeed() {
         category: "dog",
         birth: new Date('2020-07-30T00:00:00Z'),
         age: 3,
-        is_available: "adopted"
+        is_available: true
       }
     ],
   });
