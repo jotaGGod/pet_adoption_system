@@ -20,9 +20,9 @@ export class AnimalsService implements IAnimalsService{
     }
     return age;
   }
-  async create(animalData: CreateAnimalDto): Promise<CreateAnimalDto>{
+  async create(body: CreateAnimalDto): Promise<CreateAnimalDto>{
     try {
-      const { name, description, image_url, category, birth } = animalData;
+      const { name, description, image_url, category, birth } = body;
       const age = this.calculateAge(birth);
       return this.prisma.animals.create({
         data: {
@@ -40,16 +40,6 @@ export class AnimalsService implements IAnimalsService{
   }
   async findAll(): Promise<AnimalEntity[]> {
     return this.prisma.animals.findMany();
-  }
-  async findByName(name: string): Promise<AnimalEntity[] | null> {
-    try {
-      return this.prisma.animals.findMany({
-        where: { name },
-      });
-    }catch (error){
-      throw new NotFoundException('No animal found');
-    }
-
   }
   async updateStatus(id: string): Promise<AnimalEntity | null> {
     try {

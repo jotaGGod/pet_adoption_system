@@ -1,4 +1,4 @@
-import { IsString, IsDate, IsInt, IsEnum } from 'class-validator';
+import { IsString, IsDate } from 'class-validator';
 
 export class CreateAnimalDto {
   @IsString()
@@ -15,7 +15,4 @@ export class CreateAnimalDto {
 
   @IsDate()
   birth: Date;
-
-  @IsInt()
-  age: number;
 }
