@@ -1,18 +1,22 @@
-import { IsString, IsDate } from 'class-validator';
+import { IsString, IsNotEmpty, IsDateString } from 'class-validator';
 
 export class CreateAnimalDto {
+  @IsNotEmpty()
   @IsString()
   name: string;
 
+  @IsNotEmpty()
   @IsString()
   description: string;
 
+  @IsNotEmpty()
   @IsString()
   image_url: string;
 
+  @IsNotEmpty()
   @IsString()
   category: string;
 
-  @IsDate()
+  @IsDateString()
   birth: Date;
 }
