@@ -21,7 +21,7 @@ export class AnimalsController {
 
   @Put('/update-status/:id')
   @HttpCode(HttpStatus.OK)
-  async updateStatus(@Param('id') id: string): Promise<AnimalEntity | null> {
+  async update(@Param('id') id: string): Promise<AnimalEntity | null> {
     return this.animalsService.updateStatus(id);
   }
 }
