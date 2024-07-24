@@ -18,7 +18,7 @@ export class AnimalsController {
   @ApiBody({ type: CreateAnimalDto })
   @ApiResponse({ status: 201, description: 'The animal has been successfully created.', type: CreateAnimalDto })
   @ApiResponse({ status: 400, description: 'Bad Request: Invalid input data' })
-  async create(@Body() body: CreateAnimalDto): Promise<CreateAnimalDto> {
+  create(@Body() body: CreateAnimalDto): Promise<CreateAnimalDto> {
     return this.animalsService.create(body);
   }
   /**
@@ -29,7 +29,7 @@ export class AnimalsController {
   @HttpCode(HttpStatus.OK)
   @ApiResponse({ status: 200, description: 'Retrieved all animals.', type: [AnimalEntity] })
   @ApiResponse({ status: 500, description: 'Internal Server Error: Failed to retrieve animals' })
-  async findAll(): Promise<AnimalEntity[]> {
+  findAll(): Promise<AnimalEntity[]> {
     return this.animalsService.findAll();
   }
   /**
@@ -42,7 +42,7 @@ export class AnimalsController {
   @ApiParam({ name: 'id', type: String, description: 'ID of the animal to update' })
   @ApiResponse({ status: 200, description: 'The animal status has been updated.', type: AnimalEntity })
   @ApiResponse({ status: 404, description: 'Animal not found' })
-  async updateStatus(@Param('id') id: string): Promise<AnimalEntity | null> {
+  updateStatus(@Param('id') id: string): Promise<AnimalEntity | null> {
     return this.animalsService.updateStatus(id);
   }
 }
